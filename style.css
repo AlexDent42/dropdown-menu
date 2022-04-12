@@ -1,11 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family: 'Ubuntu', sans-serif;
 }
 
 :root {
     --color-white:#fff;
+    --primary-background:#67a5d4;
+    --font-color-dark:#111;
+    --font-color-light:#999;
 }
 
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--primary-background);
+}
+
+
+.card {
+    position: relative;
+    width: 350px;
+    height: 400px;
+    background: var(--color-white);
+    box-shadow: 0 50px 50px rgba(0,0,0,0.25);
+    padding: 20px;
+}
+
+.card .content {
+    display: flex;
+    align-items: center;
+}
+
+.card .content .imgBx {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.card .content .imgBx img {
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .content h2 {
+    margin-left: 15px;
+    font-size: 1.3em;
+    color:var(--font-color-dark);
+}
+
+.card .content h2 span {
+    font-size: 0.8em;
+    font-weight: 400;
+    color: var(--font-color-light);
+}
+
+.navigation {
+    position: relative;
+    top: 25px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    padding: 20px 0;
+}
