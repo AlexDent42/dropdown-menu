@@ -12,6 +12,7 @@
     --primary-background:#67a5d4;
     --font-color-dark:#111;
     --font-color-light:#999;
+    --list-font-color:#555;
 }
 
 body {
@@ -26,10 +27,16 @@ body {
 .card {
     position: relative;
     width: 350px;
-    height: 400px;
+    height: 120px;
     background: var(--color-white);
     box-shadow: 0 50px 50px rgba(0,0,0,0.25);
     padding: 20px;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+}
+
+.card.active {
+    height: 400px;
 }
 
 .card .content {
@@ -71,4 +78,51 @@ body {
     top: 25px;
     border-top: 1px solid rgba(0,0,0,0.1);
     padding: 20px 0;
+}
+
+.navigation li {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.navigation li a {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: var(--list-font-color);
+    font-size: 1.1em;
+    transition: 0.25s;
+}
+
+.navigation li a:hover {
+    color: var(--primary-background);
+}
+
+.navigation li a ion-icon {
+    font-size: 1.6em;
+    margin-right: 15px;
+}
+
+.toggle {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.toggle ion-icon {
+    color: var(--color-white);
+    font-size: 1.4em;
+    transition: easy-in-out 0.5s;
+}
+
+.card.active .toggle ion-icon {
+    transform: rotate(-180deg);
 }
